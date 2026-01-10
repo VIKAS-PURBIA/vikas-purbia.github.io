@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vikas Purbia | Data Analyst & ML Engineer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
+body{line-height:1.6;color:#1f2937;}
+header{background:#020617;padding:20px 50px;}
+nav{display:flex;justify-content:space-between;align-items:center;}
+nav h2{color:#38bdf8;}
+nav ul{list-style:none;display:flex;}
+nav ul li{margin-left:20px;}
+nav ul li a{color:#e5e7eb;text-decoration:none;font-weight:500;}
+nav ul li a:hover{color:#38bdf8;}
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:#020617;
+    color:white;
+    padding:20px;
+}
+.hero span{color:#38bdf8;}
+.btn{
+    display:inline-block;
+    margin:10px;
+    padding:12px 28px;
+    background:#38bdf8;
+    color:#020617;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:600;
+}
+
+.section{padding:70px 100px;}
+.bg-light{background:#f8fafc;}
+h2{margin-bottom:20px;font-size:32px;color:#020617;}
+
+.skills{display:flex;flex-wrap:wrap;gap:15px;}
+.skills span{
+    background:#e0f2fe;
+    padding:10px 15px;
+    border-radius:20px;
+    font-weight:500;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    margin:20px 0;
+    border-radius:10px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.08);
+}
+
+footer{
+    background:#020617;
+    color:#e5e7eb;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+    .section{padding:40px 20px;}
+    nav ul{flex-direction:column;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+    <h2>Vikas Purbia</h2>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+</header>
+
+<section class="hero">
+<div>
+    <h1>Hi, I'm <span>Vikas Purbia</span></h1>
+    <h3 id="typing"></h3>
+
+    <p>
+Data Analyst skilled in Python, SQL, Machine Learning, Deep Learning, NLP,
+and end-to-end ML pipelines.
+    </p>
+
+    <a href="Vikas_Purbia_Resume.pdf" class="btn" download>Download Resume</a>
+    <a href="https://github.com/vikaspurbia" class="btn">GitHub</a>
+</div>
+</section>
+
+<section id="about" class="section">
+<h2>About Me</h2>
+<p>
+Driven Data Analyst with hands-on experience in Machine Learning, Deep Learning,
+NLP, and predictive modeling. Strong background in building ML solutions and
+turning data into actionable business insights.
+</p>
+</section>
+
+<section id="skills" class="section bg-light">
+<h2>Technical Skills</h2>
+<div class="skills">
+    <span>Python</span><span>SQL</span><span>Machine Learning</span>
+    <span>Deep Learning</span><span>NLP</span><span>Gen AI</span>
+    <span>LLM</span><span>TensorFlow</span><span>Azure</span>
+    <span>Tableau</span>
+</div>
+</section>
+
+<section id="projects" class="section">
+<h2>Projects</h2>
+
+<div class="card">
+<h3>Zomato Restaurant Clustering & Sentiment Analysis</h3>
+<p>Unsupervised ML clustering and NLP-based sentiment analysis on reviews.</p>
+</div>
+
+<div class="card">
+<h3>Customer Segmentation & Product Recommendation</h3>
+<p>RFM-based segmentation and collaborative filtering recommendation system.</p>
+</div>
+
+<div class="card">
+<h3>Multiclass Fish Image Classification</h3>
+<p>Deep learning CNN model trained on 10,000+ images achieving 92% accuracy.</p>
+</div>
+
+</section>
+
+<section id="contact" class="section bg-light">
+<h2>Contact</h2>
+<p>Email: vikas.purbiaa@gmail.com</p>
+<p>LinkedIn: linkedin.com/in/vikas-purbia-10734432a</p>
+<p>Location: Udaipur, India</p>
+</section>
+
+<footer>
+<p>© 2026 Vikas Purbia | Data Analyst & ML Engineer</p>
+</footer>
+
+<script>
+const roles=["Data Analyst","Machine Learning Engineer","AI & NLP Enthusiast"];
+let i=0,j=0,del=false;
+function typing(){
+    let word=roles[i];
+    document.getElementById("typing").innerHTML=
+        del?word.substring(0,--j):word.substring(0,++j);
+    if(!del&&j===word.length)del=true;
+    if(del&&j===0){del=false;i=(i+1)%roles.length;}
+    setTimeout(typing,120);
+}
+typing();
+</script>
+
+</body>
+</html>
