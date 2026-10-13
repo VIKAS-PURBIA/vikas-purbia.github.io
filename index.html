@@ -2,204 +2,503 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Vikas Purbia | Data Analyst & ML Engineer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>Vikas Purbia — AI Engineer</title>
+<meta name="description" content="Vikas Purbia, AI Engineer. RAG & LLM systems, computer vision, end-to-end ML pipelines. Resume available as PDF.">
+<meta name="theme-color" content="#0b0d0c">
+<meta property="og:title" content="Vikas Purbia — AI Engineer">
+<meta property="og:description" content="RAG & LLM systems, computer vision, end-to-end ML pipelines.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b0d0c'/%3E%3Cpath d='M8 11l6 5-6 5' stroke='%234ade80' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 21h8' stroke='%234ade80' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
-body{line-height:1.6;color:#1f2937;}
-header{background:#020617;padding:20px 50px;}
-nav{display:flex;justify-content:space-between;align-items:center;}
-nav h2{color:#38bdf8;}
-nav ul{list-style:none;display:flex;}
-nav ul li{margin-left:20px;}
-nav ul li a{color:#e5e7eb;text-decoration:none;font-weight:500;}
-nav ul li a:hover{color:#38bdf8;}
-
-.hero{
-    min-height:90vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:#020617;
-    color:white;
-    padding:20px;
+:root{
+  --bg:#0b0d0c;
+  --bg-soft:#101312;
+  --ink:#d6dbd8;
+  --muted:#7d8781;
+  --faint:#3d443f;
+  --line:#1e231f;
+  --accent:#4ade80;
+  --accent-dim:rgba(74,222,128,.12);
+  --mono:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono","Fira Code",Menlo,Consolas,"Liberation Mono",monospace;
 }
-.hero span{color:#38bdf8;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--mono);
+  font-size:15px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--accent);color:#04120a}
+a{color:inherit}
+
+/* ---------- shell ---------- */
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+@media(max-width:640px){.wrap{padding:0 18px}}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,13,12,.82);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font-size:13px;color:var(--muted);text-decoration:none;white-space:nowrap}
+.brand b{color:var(--ink);font-weight:600}
+.brand .p{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:20px}
+.nav-links a{font-size:12.5px;color:var(--muted);text-decoration:none;transition:color .18s ease}
+.nav-links a:hover{color:var(--ink)}
+@media(max-width:640px){.nav-links a:not(.nav-resume){display:none}}
+.nav-resume{
+  color:var(--accent)!important;border:1px solid var(--accent);
+  padding:4px 12px;border-radius:4px;transition:background .18s ease,color .18s ease;
+}
+.nav-resume:hover{background:var(--accent);color:#04120a!important}
+
+/* ---------- sections ---------- */
+section{padding:76px 0 8px}
+@media(max-width:640px){section{padding:56px 0 4px}}
+.label{
+  display:flex;align-items:baseline;gap:14px;margin-bottom:26px;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+}
+.label .idx{color:var(--accent);letter-spacing:0}
+.label::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:110px 0 40px}
+@media(max-width:640px){.hero{padding:72px 0 24px}}
+.prompt{color:var(--muted);font-size:13.5px}
+.prompt .p{color:var(--accent)}
+.hero h1{
+  font-size:clamp(34px,7vw,58px);font-weight:700;letter-spacing:-.02em;
+  color:var(--ink);line-height:1.12;margin:10px 0 6px;
+}
+.hero .role{
+  font-size:clamp(17px,3.4vw,24px);color:var(--accent);
+  min-height:1.6em;font-weight:500;
+}
+.cursor{
+  display:inline-block;width:.58em;height:1.15em;margin-left:3px;
+  background:var(--accent);vertical-align:text-bottom;
+  animation:blink 1.05s steps(1) infinite;
+}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.cursor{animation:none}}
+.hero p.lede{max-width:56ch;color:var(--muted);margin:20px 0 8px;font-size:14.5px}
+.hero p.lede b{color:var(--ink);font-weight:500}
+.meta-line{font-size:12.5px;color:var(--faint);margin-bottom:30px}
+.meta-line .dot{color:var(--accent)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
 .btn{
-    display:inline-block;
-    margin:10px;
-    padding:12px 28px;
-    background:#38bdf8;
-    color:#020617;
-    text-decoration:none;
-    border-radius:6px;
-    font-weight:600;
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;text-decoration:none;padding:9px 18px;border-radius:5px;
+  border:1px solid var(--line);color:var(--ink);
+  transition:border-color .18s ease,background .18s ease,color .18s ease,transform .18s ease;
+}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#04120a;font-weight:600}
+.btn.primary:hover{background:#6ee7a0;color:#04120a;transform:translateY(-1px)}
+.btn .arw{transition:transform .18s ease}
+.btn:hover .arw{transform:translate(2px,0)}
+
+/* ---------- about ---------- */
+.about p{max-width:64ch;color:var(--muted);font-size:14.5px}
+.about p b{color:var(--ink);font-weight:500}
+.about p + p{margin-top:14px}
+
+/* ---------- skills ---------- */
+.skill-row{
+  display:grid;grid-template-columns:230px 1fr;gap:18px;
+  padding:13px 0;border-bottom:1px solid var(--line);font-size:13.5px;
+}
+.skill-row:first-of-type{border-top:1px solid var(--line)}
+.skill-row .k{color:var(--accent);font-size:12.5px;padding-top:2px}
+.skill-row .v{color:var(--muted)}
+@media(max-width:640px){.skill-row{grid-template-columns:1fr;gap:2px;padding:11px 0}}
+
+/* ---------- experience ---------- */
+.xp-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;align-items:baseline}
+.xp-role{font-size:15.5px;font-weight:600;color:var(--ink)}
+.xp-role .at{color:var(--accent)}
+.xp-dates{font-size:12.5px;color:var(--faint)}
+.xp ul{list-style:none;margin-top:12px}
+.xp li{
+  position:relative;padding-left:20px;margin-bottom:7px;
+  color:var(--muted);font-size:13.5px;max-width:70ch;
+}
+.xp li::before{content:"\25B8";position:absolute;left:0;color:var(--accent)}
+.xp li b{color:var(--ink);font-weight:500}
+
+/* ---------- projects ---------- */
+.proj{
+  padding:26px 0;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:44px 1fr;gap:16px;
+}
+.proj:last-of-type{border-bottom:1px solid var(--line)}
+.proj .no{color:var(--faint);font-size:13px;padding-top:3px}
+.proj h3{font-size:15.5px;font-weight:600;line-height:1.45}
+.proj h3 a{color:var(--ink);text-decoration:none;transition:color .18s ease}
+.proj h3 a:hover{color:var(--accent)}
+.proj h3 .gh{
+  font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:3px;
+  padding:1px 7px;margin-left:10px;vertical-align:2px;white-space:nowrap;
+  transition:color .18s ease,border-color .18s ease;
+}
+.proj h3 a:hover .gh{color:var(--accent);border-color:var(--accent)}
+.proj p{color:var(--muted);font-size:13.5px;max-width:70ch;margin-top:7px}
+.proj .stack{margin-top:10px;font-size:12px;color:var(--faint)}
+.proj .stack b{color:var(--accent);font-weight:500}
+@media(max-width:640px){.proj{grid-template-columns:1fr;gap:4px}.proj .no{display:none}}
+
+/* ---------- education ---------- */
+.edu{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;align-items:baseline}
+.edu .d{font-size:12.5px;color:var(--faint)}
+.edu p{color:var(--muted);font-size:13.5px;margin-top:6px}
+
+/* ---------- contact ---------- */
+.contact .big{
+  font-size:clamp(19px,4.4vw,30px);font-weight:600;letter-spacing:-.01em;
+  color:var(--ink);text-decoration:none;border-bottom:1px solid var(--faint);
+  padding-bottom:2px;transition:color .18s ease,border-color .18s ease;
+}
+.contact .big:hover{color:var(--accent);border-color:var(--accent)}
+.links{display:flex;flex-wrap:wrap;gap:26px;margin-top:34px}
+.links a{
+  font-size:13px;color:var(--muted);text-decoration:none;
+  display:inline-flex;align-items:center;gap:7px;transition:color .18s ease;
+}
+.links a:hover{color:var(--accent)}
+.links a .arw{transition:transform .18s ease}
+.links a:hover .arw{transform:translate(2px,0)}
+
+/* ---------- resume (web sheet + print) ---------- */
+.r-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.sheet{
+  background:#fbfbf9;color:#171717;border:1px solid var(--line);border-radius:6px;
+  padding:38px 42px;font-family:Helvetica,Arial,sans-serif;font-size:12.5px;line-height:1.55;
+  box-shadow:0 24px 60px rgba(0,0,0,.45);
+}
+.sheet b{font-weight:700}
+.r-name{font-size:22px;font-weight:700;letter-spacing:.02em}
+.r-role{font-size:13px;font-weight:700;margin:2px 0 6px}
+.r-contact{font-size:10.5px;color:#333;border-bottom:2px solid #111;padding-bottom:10px;margin-bottom:12px;word-break:break-word}
+.r-h2{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #999;padding-bottom:3px;margin:16px 0 8px}
+.r-p{margin-bottom:5px}
+.r-item{font-weight:600;margin-top:8px}
+.r-meta{font-size:10.5px;color:#333;margin-bottom:4px}
+.r-b{list-style:none}
+.r-b li{position:relative;padding-left:14px;margin-bottom:3px}
+.r-b li::before{content:"-\00a0";position:absolute;left:0}
+@media(max-width:640px){.sheet{padding:22px 18px}}
+@media print{
+  body{background:#fff}
+  .nav,footer,.hero,.label,.r-actions,#about,#skills,#experience,#projects,#education,#contact{display:none !important}
+  .resume-sec{padding:0 !important}
+  .sheet{border:none;border-radius:0;box-shadow:none;padding:0;max-width:100%}
+  .reveal{opacity:1 !important;transform:none !important}
 }
 
-.section{padding:70px 100px;}
-.bg-light{background:#f8fafc;}
-h2{margin-bottom:20px;font-size:32px;color:#020617;}
-
-.skills{display:flex;flex-wrap:wrap;gap:15px;}
-.skills span{
-    background:#e0f2fe;
-    padding:10px 15px;
-    border-radius:20px;
-    font-weight:500;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    margin:20px 0;
-    border-radius:10px;
-    box-shadow:0 10px 20px rgba(0,0,0,0.08);
-}
-
-footer{
-    background:#020617;
-    color:#e5e7eb;
-    text-align:center;
-    padding:20px;
-}
-
-@media(max-width:768px){
-    .section{padding:40px 20px;}
-    nav ul{flex-direction:column;}
-}
+/* ---------- footer ---------- */
+footer{padding:60px 0 42px;color:var(--faint);font-size:12px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+footer .p{color:var(--accent)}
 </style>
 </head>
 
 <body>
 
-<header>
-<nav>
-    <h2>Vikas Purbia</h2>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+<!-- ================= nav ================= -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" data-testid="nav-brand-link"><span class="p">$</span> <b>vikas-purbia</b> ~/ai-engineer</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#about" data-testid="nav-about-link">about</a>
+      <a href="#skills" data-testid="nav-skills-link">skills</a>
+      <a href="#experience" data-testid="nav-experience-link">experience</a>
+      <a href="#projects" data-testid="nav-projects-link">projects</a>
+      <a href="#resume" data-testid="nav-resume-section-link">resume</a>
+      <a href="#contact" data-testid="nav-contact-link">contact</a>
+      <a class="nav-resume" href="Vikas_Purbia_AI_Engineer_Resume.pdf" download data-testid="nav-resume-download-link">resume.pdf ↓</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hero">
-<div>
-    <h1>Hi, I'm <span>Vikas Purbia</span></h1>
-    <h3 id="typing"></h3>
+<main id="top">
 
-    <p>
-Data Analyst skilled in Python, SQL, Machine Learning, Deep Learning, NLP,
-and end-to-end ML pipelines.
-    </p>
+  <!-- ================= hero ================= -->
+  <div class="wrap hero">
+    <p class="prompt reveal"><span class="p">$</span> whoami</p>
+    <h1 class="reveal">Vikas Purbia</h1>
+    <div class="role reveal" aria-live="polite"><span id="typed" data-testid="hero-typed-role">AI Engineer</span><span class="cursor" aria-hidden="true"></span></div>
+    <p class="lede reveal">I build <b>end-to-end AI systems</b> — RAG assistants with citations and refusal safety, computer-vision models, and classical ML pipelines that ship with measurable results.</p>
+    <p class="meta-line reveal">Udaipur, India <span class="dot">·</span> B.Tech CS ’27 <span class="dot">·</span> open to AI engineer roles</p>
+    <div class="cta-row reveal">
+      <a class="btn primary" href="Vikas_Purbia_AI_Engineer_Resume.pdf" download data-testid="hero-resume-download-button">↓ download_resume.pdf</a>
+      <a class="btn" href="https://github.com/VIKAS-PURBIA" target="_blank" rel="noopener" data-testid="hero-github-link">github <span class="arw">↗</span></a>
+      <a class="btn" href="https://www.linkedin.com/in/vikas-purbia-10734432a" target="_blank" rel="noopener" data-testid="hero-linkedin-link">linkedin <span class="arw">↗</span></a>
+      <a class="btn" href="mailto:vikas.purbiaa@gmail.com" data-testid="hero-email-link">email <span class="arw">↗</span></a>
+    </div>
+  </div>
 
-    <a href="Vikas_Purbia_Resume.pdf" class="btn" target="_blank">
-    View Resume
-</a>
+  <!-- ================= about ================= -->
+  <section id="about" class="about">
+    <div class="wrap">
+      <h2 class="label reveal"><span class="idx">01</span> about</h2>
+      <p class="reveal">I got into AI by building things that have to survive the real world, not toy notebooks. I've shipped a <b>RAG support assistant</b> that cites its sources, knows when to say "I don't know", and escalates to a human when it should — plus deep learning models at <b>92% accuracy on 10,000+ images</b> and classical ML that moved real numbers (30% efficiency gains, higher order value).</p>
+      <p class="reveal">My rule is simple: <b>measure everything, cite everything, refuse when unsure</b> — whether that's a retrieval-score gate in an LLM pipeline or a confusion matrix in a vision model. Currently finishing my B.Tech in Computer Science (CGPA 8.04) and looking for an AI engineer role where shipping reliable systems is the job description.</p>
+    </div>
+  </section>
 
-<a href="Vikas_Purbia_Resume.pdf" class="btn" download>
-    Download Resume
-</a>
+  <!-- ================= skills ================= -->
+  <section id="skills">
+    <div class="wrap">
+      <h2 class="label reveal"><span class="idx">02</span> skills</h2>
+      <div class="skill-row reveal"><div class="k">languages</div><div class="v">Python, SQL, Bash</div></div>
+      <div class="skill-row reveal"><div class="k">ai &amp; machine learning</div><div class="v">scikit-learn, regression, clustering, Random Forest, RFM analysis, feature engineering, model evaluation, hyperparameter tuning</div></div>
+      <div class="skill-row reveal"><div class="k">deep learning &amp; cv</div><div class="v">TensorFlow, Keras, CNNs, transfer learning (MobileNetV2, EfficientNetB0), data augmentation</div></div>
+      <div class="skill-row reveal"><div class="k">gen ai &amp; llm</div><div class="v">RAG, embeddings, vector search (Qdrant), hybrid retrieval (BM25 + dense, RRF), LLM agents &amp; routing, prompt engineering, prompt-injection defense, Ollama, eval harnesses</div></div>
+      <div class="skill-row reveal"><div class="k">nlp</div><div class="v">sentiment analysis, text preprocessing, transformers</div></div>
+      <div class="skill-row reveal"><div class="k">data &amp; viz</div><div class="v">pandas, NumPy, Matplotlib, Seaborn, Tableau, EDA</div></div>
+      <div class="skill-row reveal"><div class="k">cloud &amp; mlops</div><div class="v">Microsoft Azure, FastAPI, REST APIs, Streamlit, Docker, Git/GitHub, pytest, ML pipelines</div></div>
+    </div>
+  </section>
 
-    <a href="https://github.com/VIKAS-PURBIA" class="btn" target="_blank">
-    GitHub
-</a>
+  <!-- ================= experience ================= -->
+  <section id="experience">
+    <div class="wrap">
+      <h2 class="label reveal"><span class="idx">03</span> experience</h2>
+      <div class="xp reveal">
+        <div class="xp-head">
+          <div class="xp-role">AI/ML Intern <span class="at">@</span> Labmentix Pvt Ltd</div>
+          <div class="xp-dates">Jul 2025 — Sep 2025 · Udaipur, India</div>
+        </div>
+        <ul data-testid="experience-bullets">
+          <li>Engineered <b>machine learning models</b> that improved predictive accuracy for patient diagnosis and reduced processing errors.</li>
+          <li>Partnered with cross-functional teams to redesign data-processing strategies, achieving a <b>30% increase in efficiency</b>.</li>
+          <li>Leveraged <b>Python and Tableau</b> for advanced analysis and visualization, enabling data-driven stakeholder decisions.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-</div>
-</section>
+  <!-- ================= projects ================= -->
+  <section id="projects">
+    <div class="wrap">
+      <h2 class="label reveal"><span class="idx">04</span> projects</h2>
 
-<section id="about" class="section">
-<h2>About Me</h2>
-<p>
-Driven Data Analyst with hands-on experience in Machine Learning, Deep Learning,
-NLP, and predictive modeling. Strong background in building ML solutions and
-turning data into actionable business insights.
-</p>
-</section>
+      <div class="proj reveal" data-testid="project-support-copilot">
+        <div class="no">01</div>
+        <div>
+          <h3><a href="https://github.com/VIKAS-PURBIA/support-copilot" target="_blank" rel="noopener" data-testid="project-link-support-copilot">Support Copilot — local RAG assistant<span class="gh">github ↗</span></a></h3>
+          <p>Agentic RAG pipeline (router → rewriter → hybrid retriever → grader → answerer → verifier) that answers support questions with citations, refuses when unsure, and escalates to humans with a handoff note. Four refusal gates, prompt-injection defense, per-request agent traces, and a 50+ question eval harness.</p>
+          <div class="stack"><b>stack</b> — Python · FastAPI · Ollama · Qdrant · BM25 + RRF · Streamlit · Docker · pytest</div>
+        </div>
+      </div>
 
-<section id="skills" class="section bg-light">
-<h2>Technical Skills</h2>
-<div class="skills">
-    <span>Python</span><span>SQL</span><span>Machine Learning</span>
-    <span>Deep Learning</span><span>NLP</span><span>Gen AI</span>
-    <span>LLM</span><span>TensorFlow</span><span>Azure</span>
-    <span>Tableau</span>
-</div>
-</section>
+      <div class="proj reveal" data-testid="project-fish-classification">
+        <div class="no">02</div>
+        <div>
+          <h3><a href="https://github.com/VIKAS-PURBIA/Multiclass-Fish-Image-Classification" target="_blank" rel="noopener" data-testid="project-link-fish-classification">Multiclass Fish Image Classification<span class="gh">github ↗</span></a></h3>
+          <p>CNN from scratch plus transfer learning (MobileNetV2, EfficientNetB0) on 10,000+ images. Data augmentation and hyperparameter tuning to 92% accuracy; evaluated with precision, recall, F1 and confusion matrix, deployed as a Streamlit app with confidence scores.</p>
+          <div class="stack"><b>stack</b> — Python · TensorFlow · Keras · CNN · transfer learning · Streamlit</div>
+        </div>
+      </div>
 
-<section id="projects" class="section">
-<h2>Projects</h2>
+      <div class="proj reveal" data-testid="project-zomato">
+        <div class="no">03</div>
+        <div>
+          <h3><a href="https://github.com/VIKAS-PURBIA/Zomato_Restaurant_Clustering_and_Sentiment_Analysis" target="_blank" rel="noopener" data-testid="project-link-zomato">Zomato Clustering &amp; Sentiment Analysis<span class="gh">github ↗</span></a></h3>
+          <p>Clustered restaurants by cuisine and ratings, then ran NLP sentiment analysis on customer reviews — visualized both to guide strategic decisions.</p>
+          <div class="stack"><b>stack</b> — Python · scikit-learn · NLP · visualization</div>
+        </div>
+      </div>
 
-<div class="card">
-    <h3>Zomato Restaurant Clustering & Sentiment Analysis</h3>
-    <p>
-    Developed clustering algorithms to categorize restaurants based on cuisine
-    and ratings. Performed NLP-based sentiment analysis on customer reviews
-    and visualized insights for strategic decision-making.
-    </p>
+      <div class="proj reveal" data-testid="project-shopper-spectrum">
+        <div class="no">04</div>
+        <div>
+          <h3><a href="https://github.com/VIKAS-PURBIA/Shopper-Spectrum-Customer-Segmentation-and-Product-Recommendations-in-E-Commerce" target="_blank" rel="noopener" data-testid="project-link-shopper-spectrum">Shopper Spectrum — Segmentation &amp; Recommendations<span class="gh">github ↗</span></a></h3>
+          <p>RFM-based ML customer segmentation with a collaborative-filtering recommendation engine that lifted cross-selling and average order value in e-commerce.</p>
+          <div class="stack"><b>stack</b> — Python · ML · RFM · collaborative filtering</div>
+        </div>
+      </div>
 
-    <a href="https://github.com/VIKAS-PURBIA/Zomato_Restaurant_Clustering_and_Sentiment_Analysis"
-       target="_blank">
-       🔗 View Project on GitHub
-    </a>
-</div>
+      <div class="proj reveal" data-testid="project-food-wastage">
+        <div class="no">05</div>
+        <div>
+          <h3><a href="https://github.com/VIKAS-PURBIA/Local-Food-Wastage-Management-System" target="_blank" rel="noopener" data-testid="project-link-food-wastage">Local Food Wastage Management System<span class="gh">github ↗</span></a></h3>
+          <p>Analyzed wastage trends and partnered with local organizations on food recovery — a 30% reduction in waste with data-backed policy recommendations.</p>
+          <div class="stack"><b>stack</b> — Python · SQL · data analysis</div>
+        </div>
+      </div>
 
-<div class="card">
-    <h3>Shopper Spectrum – Customer Segmentation & Product Recommendation</h3>
-    <p>
-    Built ML-driven customer segmentation models using RFM analysis and
-    collaborative filtering-based product recommendation systems to
-    improve e-commerce engagement.
-    </p>
+    </div>
+  </section>
 
-    <a href="https://github.com/VIKAS-PURBIA/Shopper-Spectrum-Customer-Segmentation-and-Product-Recommendations-in-E-Commerce"
-       target="_blank">
-       🔗 View Project on GitHub
-    </a>
-</div>
+  <!-- ================= education ================= -->
+  <section id="education">
+    <div class="wrap">
+      <h2 class="label reveal"><span class="idx">05</span> education</h2>
+      <div class="edu reveal">
+        <div class="xp-role">B.Tech, Computer Science <span class="at">@</span> Bikaner Technical University</div>
+        <div class="d">2023 — 2027</div>
+      </div>
+      <p class="reveal">CGPA 8.04 · coursework across machine learning, deep learning, NLP and databases.</p>
+    </div>
+  </section>
 
-<div class="card">
-    <h3>Local Food Wastage Management System</h3>
-    <p>
-    Designed a system to monitor and reduce food wastage by analyzing trends
-    and collaborating with local organizations, achieving measurable waste reduction.
-    </p>
+  <!-- ================= resume (web + print) ================= -->
+  <section id="resume" class="resume-sec">
+    <div class="wrap">
+      <h2 class="label reveal"><span class="idx">06</span> resume</h2>
+      <div class="r-actions reveal">
+        <button class="btn" onclick="window.print()" data-testid="resume-print-button">print / save as PDF ⎙</button>
+        <a class="btn" href="Vikas_Purbia_AI_Engineer_Resume.pdf" download data-testid="resume-download-button">↓ resume.pdf</a>
+      </div>
+      <div class="sheet reveal" data-testid="resume-sheet">
+        <div class="r-name">VIKAS PURBIA</div>
+        <div class="r-role">AI Engineer</div>
+        <div class="r-contact">Udaipur, India | +91 9166325693 | vikas.purbiaa@gmail.com | linkedin.com/in/vikas-purbia-10734432a | github.com/VIKAS-PURBIA</div>
 
-    <a href="https://github.com/VIKAS-PURBIA/Local-Food-Wastage-Management-System"
-       target="_blank">
-       🔗 View Project on GitHub
-    </a>
-</div>
+        <div class="r-h2">Professional Summary</div>
+        <p class="r-p">AI Engineer with hands-on experience building end-to-end machine learning systems: classical ML, deep learning (CNNs and transfer learning), NLP, and production-style Gen AI / LLM applications (RAG, LLM agents, vector search, evaluation harnesses). Strong in Python, SQL, TensorFlow, scikit-learn, FastAPI and Microsoft Azure, with measurable outcomes including 92% multiclass image classification accuracy, a 30% process-efficiency gain, and a fully evaluated local RAG support assistant with citations, refusal safety and human escalation. Seeking an AI Engineer role to design, evaluate, and ship reliable ML and LLM-powered products.</p>
 
-</section>
+        <div class="r-h2">Technical Skills</div>
+        <p class="r-p"><b>Languages:</b> Python, SQL, Bash</p>
+        <p class="r-p"><b>Machine Learning:</b> scikit-learn, regression, K-Means clustering, Random Forest, RFM analysis, feature engineering, data preprocessing, model evaluation (accuracy, precision, recall, F1, confusion matrix), hyperparameter tuning</p>
+        <p class="r-p"><b>Deep Learning &amp; Computer Vision:</b> TensorFlow, Keras, Convolutional Neural Networks (CNN), transfer learning (MobileNetV2, EfficientNetB0), data augmentation</p>
+        <p class="r-p"><b>NLP &amp; Generative AI:</b> Natural Language Processing (NLP), sentiment analysis, Retrieval-Augmented Generation (RAG), embeddings, vector database (Qdrant), hybrid retrieval (BM25 + dense vectors, Reciprocal Rank Fusion), Large Language Models (LLMs), LLM agents and routing, prompt engineering, prompt-injection defense, Ollama (Llama 3.2, nomic-embed-text), LLM evaluation harnesses</p>
+        <p class="r-p"><b>Data Analysis &amp; Visualization:</b> pandas, NumPy, Matplotlib, Seaborn, Tableau, exploratory data analysis (EDA), statistical analysis</p>
+        <p class="r-p"><b>Cloud, MLOps &amp; Tools:</b> Microsoft Azure, FastAPI, REST APIs, Streamlit, Docker, Git, GitHub, pytest, CI workflows, ML pipelines, model deployment</p>
 
-<section id="contact" class="section bg-light">
-<h2>Contact</h2>
-<p>Email: vikas.purbiaa@gmail.com</p>
-<p>LinkedIn: linkedin.com/in/vikas-purbia-10734432a</p>
-<p>Location: Udaipur, India</p>
-</section>
+        <div class="r-h2">Work Experience</div>
+        <div class="r-item"><b>AI/ML Intern</b> — Labmentix Pvt Ltd, Udaipur, India</div>
+        <div class="r-meta">Jul 2025 – Sep 2025</div>
+        <ul class="r-b">
+          <li>Engineered machine learning models that improved predictive accuracy for patient diagnosis and contributed to a reduction in processing errors.</li>
+          <li>Partnered with cross-functional teams to redesign data processing strategies, achieving a 30% increase in efficiency.</li>
+          <li>Leveraged Python and Tableau for advanced data analysis and visualization, enabling data-driven decision-making among stakeholders.</li>
+        </ul>
+
+        <div class="r-h2">Projects</div>
+        <div class="r-item"><b>Support Copilot — Local RAG Support Assistant with Citations and Human Escalation</b></div>
+        <div class="r-meta">Python, FastAPI, Ollama, Qdrant, Streamlit, Docker, pytest | Oct 2026 | github.com/VIKAS-PURBIA/support-copilot</div>
+        <ul class="r-b">
+          <li>Built an agentic RAG pipeline (router, rewriter, hybrid retriever, grader, answerer, verifier) that answers support questions from a help-center knowledge base and past tickets with cited sources.</li>
+          <li>Implemented hybrid search combining BM25 and dense vector retrieval with Reciprocal Rank Fusion, and role-based access control as a metadata filter inside vector queries.</li>
+          <li>Designed four independent refusal gates (retrieval score, grader, citation check, verifier) with automatic human-handoff escalation notes and per-request agent traces with latency metrics.</li>
+          <li>Hardened LLM prompts against prompt injection by treating retrieved text as data, and built a 50+ question evaluation harness measuring retrieval and answer quality, including unanswerable queries.</li>
+        </ul>
+
+        <div class="r-item"><b>Multiclass Fish Image Classification — Deep Learning Web App</b></div>
+        <div class="r-meta">Python, TensorFlow, Keras, CNN, Transfer Learning, Streamlit | Sep 2025 | github.com/VIKAS-PURBIA/Multiclass-Fish-Image-Classification</div>
+        <ul class="r-b">
+          <li>Trained a CNN from scratch and fine-tuned MobileNetV2 and EfficientNetB0 pretrained models on a dataset of 10,000+ fish images across multiple species.</li>
+          <li>Achieved 92% classification accuracy through data augmentation and systematic hyperparameter tuning.</li>
+          <li>Evaluated models with accuracy, precision, recall, F1-score and confusion matrix; deployed the best model as a Streamlit web app returning species predictions with confidence scores.</li>
+        </ul>
+
+        <div class="r-item"><b>Zomato Restaurant Clustering and Sentiment Analysis</b></div>
+        <div class="r-meta">Python, scikit-learn, NLP | Jul 2025 | github.com/VIKAS-PURBIA/Zomato_Restaurant_Clustering_and_Sentiment_Analysis</div>
+        <ul class="r-b">
+          <li>Engineered clustering algorithms to segment restaurants by cuisine and customer ratings, and performed NLP-based sentiment analysis on customer reviews to uncover experience and service insights.</li>
+          <li>Visualized clustering and sentiment outcomes to guide strategic business decisions.</li>
+        </ul>
+
+        <div class="r-item"><b>Customer Segmentation and Product Recommendations in E-Commerce (Shopper Spectrum)</b></div>
+        <div class="r-meta">Python, Machine Learning, RFM analysis | Jun 2025 | github.com/VIKAS-PURBIA/Shopper-Spectrum-Customer-Segmentation-and-Product-Recommendations-in-E-Commerce</div>
+        <ul class="r-b">
+          <li>Built ML-driven RFM customer segmentation models and collaborative filtering product recommendation systems that improved e-commerce engagement and cross-selling.</li>
+          <li>Measured project efficacy through a significant rise in average order value.</li>
+        </ul>
+
+        <div class="r-item"><b>Local Food Wastage Management System</b></div>
+        <div class="r-meta">Python, SQL, Data Analysis | Sep 2025 | github.com/VIKAS-PURBIA/Local-Food-Wastage-Management-System</div>
+        <ul class="r-b">
+          <li>Created a system to monitor and mitigate food waste by analyzing wastage trends, contributing to effective policy recommendations.</li>
+          <li>Partnered with local organizations to improve food recovery efforts, achieving a 30% reduction in waste.</li>
+        </ul>
+
+        <div class="r-h2">Education</div>
+        <div class="r-item"><b>Bachelor of Technology (B.Tech), Computer Science</b></div>
+        <div class="r-meta">Bikaner Technical University — 2023 – 2027 | CGPA: 8.04</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= contact ================= -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2 class="label reveal"><span class="idx">07</span> contact</h2>
+      <p class="prompt reveal"><span class="p">$</span> cat contact.txt</p>
+      <p style="margin-top:14px" class="reveal"><a class="big" href="mailto:vikas.purbiaa@gmail.com" data-testid="contact-email-link">vikas.purbiaa@gmail.com</a></p>
+      <div class="links reveal">
+        <a href="https://github.com/VIKAS-PURBIA" target="_blank" rel="noopener" data-testid="contact-github-link">github <span class="arw">↗</span></a>
+        <a href="https://www.linkedin.com/in/vikas-purbia-10734432a" target="_blank" rel="noopener" data-testid="contact-linkedin-link">linkedin <span class="arw">↗</span></a>
+        <a href="Vikas_Purbia_AI_Engineer_Resume.pdf" download data-testid="contact-resume-download-link">resume.pdf <span class="arw">↓</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer>
-<p>© 2026 Vikas Purbia | Data Analyst & ML Engineer</p>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Vikas Purbia</span>
+    <span>plain HTML <span class="p">·</span> no frameworks <span class="p">·</span> <span class="p">$</span> exit 0</span>
+  </div>
 </footer>
 
 <script>
-const roles=["Data Analyst","Machine Learning Engineer","AI & NLP Enthusiast"];
-let i=0,j=0,del=false;
-function typing(){
-    let word=roles[i];
-    document.getElementById("typing").innerHTML=
-        del?word.substring(0,--j):word.substring(0,++j);
-    if(!del&&j===word.length)del=true;
-    if(del&&j===0){del=false;i=(i+1)%roles.length;}
-    setTimeout(typing,120);
-}
-typing();
+// typing role loop
+(function () {
+  var roles = ["AI Engineer", "RAG & LLM Systems", "Computer Vision", "ML Pipelines, end to end"];
+  var el = document.getElementById("typed");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !el) return;
+  var i = 0, j = 0, del = false;
+  (function tick() {
+    var word = roles[i];
+    el.textContent = word.substring(0, del ? --j : ++j);
+    var pause = 55;
+    if (!del && j === word.length) { del = true; pause = 1700; }
+    else if (del && j === 0) { del = false; i = (i + 1) % roles.length; pause = 350; }
+    setTimeout(tick, pause);
+  })();
+})();
+
+// scroll reveal
+(function () {
+  var els = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    els.forEach(function (e) { e.classList.add("in"); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(function (e) { io.observe(e); });
+})();
+
+// footer year
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4bc70e2c01a94c73b74392e4234840661791215815920" integrity="sha512-L0ha0OXavK/8okipN9F8BtP84dg9DUhPERbBXzwI6dgTA55d2+yweo3pn5CSFYs45/r8md2+xvUPtTdvTNRfjA==" data-cf-beacon='{"version":"2024.11.0","token":"7f7b0fd8732c4326aae4b9d58d5c514a","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
