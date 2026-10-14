@@ -231,7 +231,7 @@ footer .p{color:var(--accent)}
       <a href="#projects" data-testid="nav-projects-link">projects</a>
       <a href="#resume" data-testid="nav-resume-section-link">resume</a>
       <a href="#contact" data-testid="nav-contact-link">contact</a>
-      <a class="nav-resume" href="Vikas_Purbia_AI_Engineer_Resume.pdf" download data-testid="nav-resume-download-link">resume.pdf ↓</a>
+      <a class="nav-resume" href="resume%20(2).pdf" download data-testid="nav-resume-download-link">resume.pdf ↓</a>
     </nav>
   </div>
 </header>
@@ -244,9 +244,9 @@ footer .p{color:var(--accent)}
     <h1 class="reveal">Vikas Purbia</h1>
     <div class="role reveal" aria-live="polite"><span id="typed" data-testid="hero-typed-role">AI Engineer</span><span class="cursor" aria-hidden="true"></span></div>
     <p class="lede reveal">I build <b>end-to-end AI systems</b> — RAG assistants with citations and refusal safety, computer-vision models, and classical ML pipelines that ship with measurable results.</p>
-    <p class="meta-line reveal">Udaipur, India <span class="dot">·</span> B.Tech CS ’27 <span class="dot">·</span> open to AI engineer roles</p>
+    <p class="meta-line reveal">Udaipur, Rajasthan, India <span class="dot">·</span> B.Tech AI &amp; Data Science ’27 <span class="dot">·</span> open to AI engineer roles</p>
     <div class="cta-row reveal">
-      <a class="btn primary" href="Vikas_Purbia_AI_Engineer_Resume.pdf" download data-testid="hero-resume-download-button">↓ download_resume.pdf</a>
+      <a class="btn primary" href="resume%20(2).pdf" download data-testid="hero-resume-download-button">↓ download_resume.pdf</a>
       <a class="btn" href="https://github.com/VIKAS-PURBIA" target="_blank" rel="noopener" data-testid="hero-github-link">github <span class="arw">↗</span></a>
       <a class="btn" href="https://www.linkedin.com/in/vikas-purbia-10734432a" target="_blank" rel="noopener" data-testid="hero-linkedin-link">linkedin <span class="arw">↗</span></a>
       <a class="btn" href="mailto:vikas.purbiaa@gmail.com" data-testid="hero-email-link">email <span class="arw">↗</span></a>
@@ -257,8 +257,8 @@ footer .p{color:var(--accent)}
   <section id="about" class="about">
     <div class="wrap">
       <h2 class="label reveal"><span class="idx">01</span> about</h2>
-      <p class="reveal">I got into AI by building things that have to survive the real world, not toy notebooks. I've shipped a <b>RAG support assistant</b> that cites its sources, knows when to say "I don't know", and escalates to a human when it should — plus deep learning models at <b>92% accuracy on 10,000+ images</b> and classical ML that moved real numbers (30% efficiency gains, higher order value).</p>
-      <p class="reveal">My rule is simple: <b>measure everything, cite everything, refuse when unsure</b> — whether that's a retrieval-score gate in an LLM pipeline or a confusion matrix in a vision model. Currently finishing my B.Tech in Computer Science (CGPA 8.04) and looking for an AI engineer role where shipping reliable systems is the job description.</p>
+      <p class="reveal">I got into AI by building things that have to survive the real world, not toy notebooks. I've built a <b>RAG support assistant</b> with source citations, confidence checks, role-based document filtering, and human escalation, alongside projects in retail forecasting, customer segmentation, computer vision, and NLP.</p>
+      <p class="reveal">My approach is to evaluate systems with explicit metrics and be clear about what those metrics mean. I'm completing my B.Tech in Artificial Intelligence &amp; Data Science (CGPA 8.04/10) and looking for an AI Engineer role focused on reliable, measurable AI systems.</p>
     </div>
   </section>
 
@@ -283,12 +283,12 @@ footer .p{color:var(--accent)}
       <div class="xp reveal">
         <div class="xp-head">
           <div class="xp-role">AI/ML Intern <span class="at">@</span> Labmentix Pvt Ltd</div>
-          <div class="xp-dates">Jul 2025 — Sep 2025 · Udaipur, India</div>
+          <div class="xp-dates">Jul 2025 — Sep 2025 · Bengaluru, India</div>
         </div>
         <ul data-testid="experience-bullets">
-          <li>Engineered <b>machine learning models</b> that improved predictive accuracy for patient diagnosis and reduced processing errors.</li>
-          <li>Partnered with cross-functional teams to redesign data-processing strategies, achieving a <b>30% increase in efficiency</b>.</li>
-          <li>Leveraged <b>Python and Tableau</b> for advanced analysis and visualization, enabling data-driven stakeholder decisions.</li>
+          <li>Worked on <b>Python-based data preparation, analysis, and machine-learning workflows</b>.</li>
+          <li>Used analytical and machine-learning tools to support project tasks and communicate data findings.</li>
+          <li>Contributed to data preparation and analysis tasks as part of internship project workflows.</li>
         </ul>
       </div>
     </div>
@@ -303,8 +303,8 @@ footer .p{color:var(--accent)}
         <div class="no">01</div>
         <div>
           <h3><a href="https://github.com/VIKAS-PURBIA/support-copilot" target="_blank" rel="noopener" data-testid="project-link-support-copilot">Support Copilot — local RAG assistant<span class="gh">github ↗</span></a></h3>
-          <p>Agentic RAG pipeline (router → rewriter → hybrid retriever → grader → answerer → verifier) that answers support questions with citations, refuses when unsure, and escalates to humans with a handoff note. Four refusal gates, prompt-injection defense, per-request agent traces, and a 50+ question eval harness.</p>
-          <div class="stack"><b>stack</b> — Python · FastAPI · Ollama · Qdrant · BM25 + RRF · Streamlit · Docker · pytest</div>
+          <p>Built a local RAG support assistant with source citations, role-based document filtering, confidence checks, and human escalation. Evaluation: answered 10 of 11 answerable questions, cited the correct source in 10 of 11, and correctly refused all 3 unanswerable questions tested.</p>
+          <div class="stack"><b>stack</b> — Python · FastAPI · Ollama · Qdrant · BM25 + RRF · Streamlit</div>
         </div>
       </div>
 
@@ -312,31 +312,40 @@ footer .p{color:var(--accent)}
         <div class="no">02</div>
         <div>
           <h3><a href="https://github.com/VIKAS-PURBIA/Multiclass-Fish-Image-Classification" target="_blank" rel="noopener" data-testid="project-link-fish-classification">Multiclass Fish Image Classification<span class="gh">github ↗</span></a></h3>
-          <p>CNN from scratch plus transfer learning (MobileNetV2, EfficientNetB0) on 10,000+ images. Data augmentation and hyperparameter tuning to 92% accuracy; evaluated with precision, recall, F1 and confusion matrix, deployed as a Streamlit app with confidence scores.</p>
-          <div class="stack"><b>stack</b> — Python · TensorFlow · Keras · CNN · transfer learning · Streamlit</div>
+          <p>Developed a 12-class image-classification workflow using a custom CNN and MobileNetV2 transfer learning. Fine-tuned the final 20 MobileNetV2 layers and recorded 98.17% validation accuracy with 0.0495 validation loss after three fine-tuning epochs (validation metrics, not held-out test results).</p>
+          <div class="stack"><b>stack</b> — Python · TensorFlow · Keras · CNN · MobileNetV2</div>
+        </div>
+      </div>
+
+      <div class="proj reveal" data-testid="project-retail-analytics">
+        <div class="no">03</div>
+        <div>
+          <h3><a href="https://github.com/VIKAS-PURBIA" target="_blank" rel="noopener">Integrated Retail Analytics for Store Optimization<span class="gh">github ↗</span></a></h3>
+          <p>Developed a weekly sales-forecasting workflow using historical sales, store attributes, promotions, and economic indicators. Project evaluation reported MAE of 1,357.57 and RMSE of 3,018.71; explored store/department-level error variation, anomaly detection, segmentation, and market-basket analysis.</p>
+          <div class="stack"><b>stack</b> — Python · XGBoost · Pandas · scikit-learn</div>
         </div>
       </div>
 
       <div class="proj reveal" data-testid="project-zomato">
-        <div class="no">03</div>
+        <div class="no">04</div>
         <div>
           <h3><a href="https://github.com/VIKAS-PURBIA/Zomato_Restaurant_Clustering_and_Sentiment_Analysis" target="_blank" rel="noopener" data-testid="project-link-zomato">Zomato Clustering &amp; Sentiment Analysis<span class="gh">github ↗</span></a></h3>
-          <p>Clustered restaurants by cuisine and ratings, then ran NLP sentiment analysis on customer reviews — visualized both to guide strategic decisions.</p>
+          <p>Analyzed 10,000 reviews across 100 restaurants, used TF-IDF text features (17,333 features) for sentiment-classification experiments, and evaluated K-Means cluster counts from k=2 to 9. The best saved silhouette score was 0.325 at k=6; also implemented Logistic Regression and XGBoost workflows.</p>
           <div class="stack"><b>stack</b> — Python · scikit-learn · NLP · visualization</div>
         </div>
       </div>
 
       <div class="proj reveal" data-testid="project-shopper-spectrum">
-        <div class="no">04</div>
+        <div class="no">05</div>
         <div>
           <h3><a href="https://github.com/VIKAS-PURBIA/Shopper-Spectrum-Customer-Segmentation-and-Product-Recommendations-in-E-Commerce" target="_blank" rel="noopener" data-testid="project-link-shopper-spectrum">Shopper Spectrum — Segmentation &amp; Recommendations<span class="gh">github ↗</span></a></h3>
-          <p>RFM-based ML customer segmentation with a collaborative-filtering recommendation engine that lifted cross-selling and average order value in e-commerce.</p>
+          <p>Processed 541,909 raw transaction rows and retained 397,884 after filtering missing customer IDs, cancellations, and non-positive quantity/price records. Engineered RFM features; the best silhouette score was approximately 0.617 at k=5. Built a cosine-similarity product recommendation workflow and interactive Streamlit interface.</p>
           <div class="stack"><b>stack</b> — Python · ML · RFM · collaborative filtering</div>
         </div>
       </div>
 
       <div class="proj reveal" data-testid="project-food-wastage">
-        <div class="no">05</div>
+        <div class="no">06</div>
         <div>
           <h3><a href="https://github.com/VIKAS-PURBIA/Local-Food-Wastage-Management-System" target="_blank" rel="noopener" data-testid="project-link-food-wastage">Local Food Wastage Management System<span class="gh">github ↗</span></a></h3>
           <p>Analyzed wastage trends and partnered with local organizations on food recovery — a 30% reduction in waste with data-backed policy recommendations.</p>
@@ -352,7 +361,7 @@ footer .p{color:var(--accent)}
     <div class="wrap">
       <h2 class="label reveal"><span class="idx">05</span> education</h2>
       <div class="edu reveal">
-        <div class="xp-role">B.Tech, Computer Science <span class="at">@</span> Bikaner Technical University</div>
+        <div class="xp-role">B.Tech, Artificial Intelligence &amp; Data Science <span class="at">@</span> Bikaner Technical University</div>
         <div class="d">2023 — 2027</div>
       </div>
       <p class="reveal">CGPA 8.04 · coursework across machine learning, deep learning, NLP and databases.</p>
@@ -365,75 +374,72 @@ footer .p{color:var(--accent)}
       <h2 class="label reveal"><span class="idx">06</span> resume</h2>
       <div class="r-actions reveal">
         <button class="btn" onclick="window.print()" data-testid="resume-print-button">print / save as PDF ⎙</button>
-        <a class="btn" href="Vikas_Purbia_AI_Engineer_Resume.pdf" download data-testid="resume-download-button">↓ resume.pdf</a>
+        <a class="btn" href="resume%20(2).pdf" download data-testid="resume-download-button">↓ resume.pdf</a>
       </div>
       <div class="sheet reveal" data-testid="resume-sheet">
         <div class="r-name">VIKAS PURBIA</div>
-        <div class="r-role">AI Engineer</div>
-        <div class="r-contact">Udaipur, India | +91 9166325693 | vikas.purbiaa@gmail.com | linkedin.com/in/vikas-purbia-10734432a | github.com/VIKAS-PURBIA</div>
+        <div class="r-role">AI Engineer | Machine Learning | Generative AI</div>
+        <div class="r-contact">Bengaluru, India | +91 9166325693 | vikas.purbiaa@gmail.com | linkedin.com/in/vikas-purbia-10734432a | github.com/VIKAS-PURBIA</div>
 
         <div class="r-h2">Professional Summary</div>
-        <p class="r-p">AI Engineer with hands-on experience building end-to-end machine learning systems: classical ML, deep learning (CNNs and transfer learning), NLP, and production-style Gen AI / LLM applications (RAG, LLM agents, vector search, evaluation harnesses). Strong in Python, SQL, TensorFlow, scikit-learn, FastAPI and Microsoft Azure, with measurable outcomes including 92% multiclass image classification accuracy, a 30% process-efficiency gain, and a fully evaluated local RAG support assistant with citations, refusal safety and human escalation. Seeking an AI Engineer role to design, evaluate, and ship reliable ML and LLM-powered products.</p>
+        <p class="r-p">B.Tech student in Artificial Intelligence &amp; Data Science with hands-on projects in RAG applications, machine learning, computer vision, NLP, and customer analytics. Experienced with Python, model evaluation, hybrid retrieval, clustering, and building interactive applications. Focused on developing reliable AI systems and validating performance with measurable evaluation results.</p>
 
         <div class="r-h2">Technical Skills</div>
-        <p class="r-p"><b>Languages:</b> Python, SQL, Bash</p>
-        <p class="r-p"><b>Machine Learning:</b> scikit-learn, regression, K-Means clustering, Random Forest, RFM analysis, feature engineering, data preprocessing, model evaluation (accuracy, precision, recall, F1, confusion matrix), hyperparameter tuning</p>
-        <p class="r-p"><b>Deep Learning &amp; Computer Vision:</b> TensorFlow, Keras, Convolutional Neural Networks (CNN), transfer learning (MobileNetV2, EfficientNetB0), data augmentation</p>
-        <p class="r-p"><b>NLP &amp; Generative AI:</b> Natural Language Processing (NLP), sentiment analysis, Retrieval-Augmented Generation (RAG), embeddings, vector database (Qdrant), hybrid retrieval (BM25 + dense vectors, Reciprocal Rank Fusion), Large Language Models (LLMs), LLM agents and routing, prompt engineering, prompt-injection defense, Ollama (Llama 3.2, nomic-embed-text), LLM evaluation harnesses</p>
-        <p class="r-p"><b>Data Analysis &amp; Visualization:</b> pandas, NumPy, Matplotlib, Seaborn, Tableau, exploratory data analysis (EDA), statistical analysis</p>
-        <p class="r-p"><b>Cloud, MLOps &amp; Tools:</b> Microsoft Azure, FastAPI, REST APIs, Streamlit, Docker, Git, GitHub, pytest, CI workflows, ML pipelines, model deployment</p>
+        <p class="r-p"><b>Languages:</b> Python, SQL</p>
+        <p class="r-p"><b>ML/DL:</b> Scikit-learn, XGBoost, TensorFlow, Keras, CNNs, transfer learning, K-Means, model evaluation</p>
+        <p class="r-p"><b>Generative AI:</b> RAG, LLM applications, hybrid retrieval, BM25, dense-vector search, Reciprocal Rank Fusion</p>
+        <p class="r-p"><b>Data &amp; NLP:</b> Pandas, NumPy, TF-IDF, sentiment analysis, RFM analysis, cosine similarity</p>
+        <p class="r-p"><b>Tools &amp; Deployment:</b> FastAPI, Streamlit, Ollama, Qdrant, SQLite/MySQL, Git, GitHub, Jupyter Notebook</p>
 
-        <div class="r-h2">Work Experience</div>
-        <div class="r-item"><b>AI/ML Intern</b> — Labmentix Pvt Ltd, Udaipur, India</div>
+        <div class="r-h2">Selected Projects</div>
+        <div class="r-item"><b>Support Copilot – AI-Powered RAG Support Assistant</b></div>
+        <div class="r-meta">Python, FastAPI, Ollama, Qdrant, Streamlit | GitHub</div>
+        <ul class="r-b">
+          <li>Built a local RAG support assistant with source citations, role-based document filtering, confidence checks, and human escalation.</li>
+          <li>Combined dense-vector retrieval and BM25 using Reciprocal Rank Fusion; evaluated 11 answerable and 3 unanswerable cases.</li>
+          <li>Test results: answered 10/11 answerable questions, cited the correct source in 10/11, and correctly refused 3/3 unanswerable questions.</li>
+        </ul>
+
+        <div class="r-item"><b>Integrated Retail Analytics for Store Optimization</b></div>
+        <div class="r-meta">Python, XGBoost, Pandas, scikit-learn | GitHub</div>
+        <ul class="r-b">
+          <li>Developed a weekly sales-forecasting workflow using historical sales, store attributes, promotions, and economic indicators.</li>
+          <li>Project evaluation reported overall MAE of 1,357.57 and RMSE of 3,018.71; explored store/department-level error variation, anomaly detection, segmentation, and market-basket analysis.</li>
+        </ul>
+
+        <div class="r-item"><b>Shopper Spectrum – Customer Segmentation &amp; Product Recommendations</b></div>
+        <div class="r-meta">Python, Pandas, scikit-learn, Streamlit | GitHub</div>
+        <ul class="r-b">
+          <li>Prepared 541,909 raw transaction rows and retained 397,884 after filtering missing customer IDs, cancellations, and non-positive quantity/price records.</li>
+          <li>Engineered RFM features and evaluated K-Means for k=2–10; the supplied evaluation plot showed a best silhouette score of approximately 0.617 at k=5.</li>
+          <li>Built a cosine-similarity-based product recommendation workflow and an interactive Streamlit interface.</li>
+        </ul>
+
+        <div class="r-item"><b>Multiclass Fish Image Classification</b></div>
+        <div class="r-meta">Python, TensorFlow, Keras, MobileNetV2 | GitHub</div>
+        <ul class="r-b">
+          <li>Developed a 12-class image-classification workflow using a custom CNN and MobileNetV2 transfer learning.</li>
+          <li>Fine-tuned the final 20 MobileNetV2 layers; recorded 98.17% validation accuracy and 0.0495 validation loss after three fine-tuning epochs. These are validation, not held-out test, metrics.</li>
+        </ul>
+
+        <div class="r-item"><b>Zomato Restaurant Clustering &amp; Sentiment Analysis</b></div>
+        <div class="r-meta">Python, scikit-learn, NLP | GitHub</div>
+        <ul class="r-b">
+          <li>Analyzed 10,000 reviews across 100 restaurants; applied TF-IDF text features (17,333 features) for sentiment-classification experiments.</li>
+          <li>Evaluated K-Means cluster counts from k=2 to 9; best saved silhouette score was 0.325 at k=6. Implemented Logistic Regression and XGBoost classification workflows.</li>
+        </ul>
+
+        <div class="r-h2">Experience</div>
+        <div class="r-item"><b>AI/ML Intern</b> — Labmentix Pvt. Ltd., Bengaluru, India</div>
         <div class="r-meta">Jul 2025 – Sep 2025</div>
         <ul class="r-b">
-          <li>Engineered machine learning models that improved predictive accuracy for patient diagnosis and contributed to a reduction in processing errors.</li>
-          <li>Partnered with cross-functional teams to redesign data processing strategies, achieving a 30% increase in efficiency.</li>
-          <li>Leveraged Python and Tableau for advanced data analysis and visualization, enabling data-driven decision-making among stakeholders.</li>
-        </ul>
-
-        <div class="r-h2">Projects</div>
-        <div class="r-item"><b>Support Copilot — Local RAG Support Assistant with Citations and Human Escalation</b></div>
-        <div class="r-meta">Python, FastAPI, Ollama, Qdrant, Streamlit, Docker, pytest | Oct 2026 | github.com/VIKAS-PURBIA/support-copilot</div>
-        <ul class="r-b">
-          <li>Built an agentic RAG pipeline (router, rewriter, hybrid retriever, grader, answerer, verifier) that answers support questions from a help-center knowledge base and past tickets with cited sources.</li>
-          <li>Implemented hybrid search combining BM25 and dense vector retrieval with Reciprocal Rank Fusion, and role-based access control as a metadata filter inside vector queries.</li>
-          <li>Designed four independent refusal gates (retrieval score, grader, citation check, verifier) with automatic human-handoff escalation notes and per-request agent traces with latency metrics.</li>
-          <li>Hardened LLM prompts against prompt injection by treating retrieved text as data, and built a 50+ question evaluation harness measuring retrieval and answer quality, including unanswerable queries.</li>
-        </ul>
-
-        <div class="r-item"><b>Multiclass Fish Image Classification — Deep Learning Web App</b></div>
-        <div class="r-meta">Python, TensorFlow, Keras, CNN, Transfer Learning, Streamlit | Sep 2025 | github.com/VIKAS-PURBIA/Multiclass-Fish-Image-Classification</div>
-        <ul class="r-b">
-          <li>Trained a CNN from scratch and fine-tuned MobileNetV2 and EfficientNetB0 pretrained models on a dataset of 10,000+ fish images across multiple species.</li>
-          <li>Achieved 92% classification accuracy through data augmentation and systematic hyperparameter tuning.</li>
-          <li>Evaluated models with accuracy, precision, recall, F1-score and confusion matrix; deployed the best model as a Streamlit web app returning species predictions with confidence scores.</li>
-        </ul>
-
-        <div class="r-item"><b>Zomato Restaurant Clustering and Sentiment Analysis</b></div>
-        <div class="r-meta">Python, scikit-learn, NLP | Jul 2025 | github.com/VIKAS-PURBIA/Zomato_Restaurant_Clustering_and_Sentiment_Analysis</div>
-        <ul class="r-b">
-          <li>Engineered clustering algorithms to segment restaurants by cuisine and customer ratings, and performed NLP-based sentiment analysis on customer reviews to uncover experience and service insights.</li>
-          <li>Visualized clustering and sentiment outcomes to guide strategic business decisions.</li>
-        </ul>
-
-        <div class="r-item"><b>Customer Segmentation and Product Recommendations in E-Commerce (Shopper Spectrum)</b></div>
-        <div class="r-meta">Python, Machine Learning, RFM analysis | Jun 2025 | github.com/VIKAS-PURBIA/Shopper-Spectrum-Customer-Segmentation-and-Product-Recommendations-in-E-Commerce</div>
-        <ul class="r-b">
-          <li>Built ML-driven RFM customer segmentation models and collaborative filtering product recommendation systems that improved e-commerce engagement and cross-selling.</li>
-          <li>Measured project efficacy through a significant rise in average order value.</li>
-        </ul>
-
-        <div class="r-item"><b>Local Food Wastage Management System</b></div>
-        <div class="r-meta">Python, SQL, Data Analysis | Sep 2025 | github.com/VIKAS-PURBIA/Local-Food-Wastage-Management-System</div>
-        <ul class="r-b">
-          <li>Created a system to monitor and mitigate food waste by analyzing wastage trends, contributing to effective policy recommendations.</li>
-          <li>Partnered with local organizations to improve food recovery efforts, achieving a 30% reduction in waste.</li>
+          <li>Worked on Python-based data preparation, analysis, and machine-learning workflows.</li>
+          <li>Used analytical and ML tools to support project tasks and communicate data findings.</li>
         </ul>
 
         <div class="r-h2">Education</div>
-        <div class="r-item"><b>Bachelor of Technology (B.Tech), Computer Science</b></div>
-        <div class="r-meta">Bikaner Technical University — 2023 – 2027 | CGPA: 8.04</div>
+        <div class="r-item"><b>B.Tech, Artificial Intelligence &amp; Data Science</b></div>
+        <div class="r-meta">Bikaner Technical University — 2023 – 2027 | CGPA: 8.04/10</div>
       </div>
     </div>
   </section>
@@ -447,7 +453,7 @@ footer .p{color:var(--accent)}
       <div class="links reveal">
         <a href="https://github.com/VIKAS-PURBIA" target="_blank" rel="noopener" data-testid="contact-github-link">github <span class="arw">↗</span></a>
         <a href="https://www.linkedin.com/in/vikas-purbia-10734432a" target="_blank" rel="noopener" data-testid="contact-linkedin-link">linkedin <span class="arw">↗</span></a>
-        <a href="Vikas_Purbia_AI_Engineer_Resume.pdf" download data-testid="contact-resume-download-link">resume.pdf <span class="arw">↓</span></a>
+        <a href="resume%20(2).pdf" download data-testid="contact-resume-download-link">resume.pdf <span class="arw">↓</span></a>
       </div>
     </div>
   </section>
